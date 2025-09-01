@@ -1,4 +1,4 @@
-# System Administration Projects Repository
+# System Administration Projects
 
 ### About This Repository
 This repository is a collection of hands-on projects that demonstrate my practical skills in **Windows Server Administration**. The labs are designed to simulate real-world scenarios, covering foundational server configurations, network service management, and advanced policy enforcement. Each project includes documented steps, key configurations, and the outcomes, serving as a portfolio of my system administration capabilities. This is a living document and will be updated as more projects are completed.
