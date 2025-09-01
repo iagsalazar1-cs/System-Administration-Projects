@@ -1,1 +1,1 @@
-
+This images folder contains all the visual aids for the main `README.md` file for the "Windows Server Configuration" project. Each image corresponds to a specific figure in the step-by-step instructions, showing key screens and windows to help you follow along with the configuration process.
