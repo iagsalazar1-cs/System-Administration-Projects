@@ -1,7 +1,7 @@
 # Windows Server DNS and DHCP Configuration
 
 ### Project Overview
-This project involves configuring and managing two fundamental network services on a `Windows Server`: Domain Name System (`DNS`) and Dynamic Host Configuration Protocol (`DHCP`). The `DNS` portion focuses on creating and validating `DNS` records, specifically **A** and **CNAME** records. The `DHCP` portion involves installing and authorizing the `DHCP` server role, while creating and activating a new **IPv4 scope**.
+This project involves configuring and managing two fundamental network services on a `Windows Server`: Domain Domain System (`DNS`) and Dynamic Host Configuration Protocol (`DHCP`). The `DNS` portion focuses on creating and validating `DNS` records, specifically **A** and **CNAME** records. The `DHCP` portion involves installing and authorizing the `DHCP` server role, while creating and activating a new **IPv4 scope**.
 
 ### Goals
 * Gain practical experience in configuring and managing `DNS` on a `Windows Server`.
@@ -18,6 +18,7 @@ This project involves configuring and managing two fundamental network services 
 * **Task 6: Install DHCP Server Role:** Install the `DHCP Server` role on the `Windows Server`.
 * **Task 7: Authorize DHCP Server:** Authorize the `DHCP` server.
 * **Task 8: Add and Activate a new IPv4 scope:** Name it **Cyber Scope** with its IP address range, subnet mask, and exclusions.
+* **Task 9: Add and Activate a new IPv4 scope (Continued):** Specify the lease duration of 7 days, DHCP Options with parent domain cyber.local, DNS Server IP 192.168.0.1, and confirm the scope's activation.
 
 ### Step-by-Step Guide
 
@@ -32,8 +33,6 @@ This project involves configuring and managing two fundamental network services 
 
 ![Figure 2 - Check Client IP Address 2](https://github.com/iagsalazar1-cs/System-Administration-Projects/blob/main/03-Configuring-DNS-and-DHCP-in-Windows-Server/images/Figure02_check_client_ip_address_2.png)
 
----
-
 ### Task 2: Create DNS A Record on Server
 
 ![Figure 3 - Create DNS A Record](https://github.com/iagsalazar1-cs/System-Administration-Projects/blob/main/03-Configuring-DNS-and-DHCP-in-Windows-Server/images/Figure03_create_dns_a_record.png)
@@ -47,8 +46,6 @@ This project involves configuring and managing two fundamental network services 
 
 ![Figure 4 - Create DNS A Record 2](https://github.com/iagsalazar1-cs/System-Administration-Projects/blob/main/03-Configuring-DNS-and-DHCP-in-Windows-Server/images/Figure04_create_dns_a_record_2.png)
 
----
-
 ### Task 3: Verify A Record on Client
 
 ![Figure 5 - Verify A Record](https://github.com/iagsalazar1-cs/System-Administration-Projects/blob/main/03-Configuring-DNS-and-DHCP-in-Windows-Server/images/Figure05_verify_a_record.png)
@@ -58,8 +55,6 @@ This project involves configuring and managing two fundamental network services 
 3. Observe that the server name in the output is **UnKnown**.
 
 ![Figure 6 - Verify A Record 2](https://github.com/iagsalazar1-cs/System-Administration-Projects/blob/main/03-Configuring-DNS-and-DHCP-in-Windows-Server/images/Figure06_verify_a_record_2.png)
-
----
 
 ### Task 4: Create CNAME Record on Server
 
@@ -73,8 +68,6 @@ This project involves configuring and managing two fundamental network services 
 
 ![Figure 8 - Create CNAME Record 2](https://github.com/iagsalazar1-cs/System-Administration-Projects/blob/main/03-Configuring-DNS-and-DHCP-in-Windows-Server/images/Figure08_create_cname_record_2.png)
 
----
-
 ### Task 5: Verify CNAME Record on Client
 
 ![Figure 9 - Verify CNAME Record](https://github.com/iagsalazar1-cs/System-Administration-Projects/blob/main/03-Configuring-DNS-and-DHCP-in-Windows-Server/images/Figure09_verify_cname_record.png)
@@ -84,8 +77,6 @@ This project involves configuring and managing two fundamental network services 
 3. The output displayed `my-favorite-client.cyber.local` in the aliases field, confirming the successful creation of the `CNAME` record.
 
 ![Figure 10 - Verify CNAME Record 2](https://github.com/iagsalazar1-cs/System-Administration-Projects/blob/main/03-Configuring-DNS-and-DHCP-in-Windows-Server/images/Figure10_verify_cname_record_2.png)
-
----
 
 ### Task 6: Install DHCP Server Role
 
@@ -99,8 +90,6 @@ This project involves configuring and managing two fundamental network services 
 
 ![Figure 12 - Install DHCP Server Role 2](https://github.com/iagsalazar1-cs/System-Administration-Projects/blob/main/03-Configuring-DNS-and-DHCP-in-Windows-Server/images/Figure12_install_dhcp_role_2.png)
 
----
-
 ### Task 7: Authorize DHCP Server
 
 ![Figure 13 - Authorize DHCP Server](https://github.com/iagsalazar1-cs/System-Administration-Projects/blob/main/03-Configuring-DNS-and-DHCP-in-Windows-Server/images/Figure13_authorize_dhcp_server.png)
@@ -112,19 +101,23 @@ This project involves configuring and managing two fundamental network services 
 
 ![Figure 14 - Authorize DHCP Server 2](https://github.com/iagsalazar1-cs/System-Administration-Projects/blob/main/03-Configuring-DNS-and-DHCP-in-Windows-Server/images/Figure14_authorize_dhcp_server_2.png)
 
----
-
 ### Task 8: Add and Activate a new IPv4 scope
 
 ![Figure 15 - Add New IPv4 Scope](https://github.com/iagsalazar1-cs/System-Administration-Projects/blob/main/03-Configuring-DNS-and-DHCP-in-Windows-Server/images/Figure15_add_new_ipv4_scope.png)
 
-1. Navigate to **Tools** and select **DHCP** to access the `DHCP` management tool. Inside `DHCP`, expand the node `Windows_Server.cyber.local` at the left-side pane. Expand and right-click **IPv4**, and choose "**New Scope...**".
+1. Navigate to **Tools** and select **DHCP** to access the `DHCP` management tool. Inside `DHCP`, expand the node `Windows_Server.cyber.local` at the left-side pane. Expanded and right-clicked **IPv4**, and chose **"New Scope..."**.
 2. In the `New Scope Wizard` window, click **Next**, then name the scope **Cyber Scope**, and click **Next** again.
 3. Define the IP range as `192.168.0.1--192.168.0.200`, and set the subnet mask to `255.255.255.0`, and click **Next**. Specify the exclusion range: `192.168.0.1 -- 192.168.0.10`, click **Add** and **Next**.
-4. Configure the lease duration to last **7 days**, and click **Next**.
-5. Continue with the setup process until the section for **Domain Name and DNS Servers**. In this section, specify the parent domain as `cyber.local`. Assign the IP address of the domain to `192.168.0.1`. Click the **Add** button, **Yes** to confirm, and **Next**.
-6. Opt to activate the scope immediately.
-7. Complete the process and exit the wizard. Finally, revisit the `DHCP` management tool to confirm your scope's successful creation and activation.
 
 ![Figure 16 - Add New IPv4 Scope 2](https://github.com/iagsalazar1-cs/System-Administration-Projects/blob/main/03-Configuring-DNS-and-DHCP-in-Windows-Server/images/Figure16_add_new_ipv4_scope_2.png)
 
+### Task 9: Add and Activate a new IPv4 scope (Continued)
+
+![Figure 17 - Add and Activate a new IPv4 scope (Continued)](https://github.com/iagsalazar1-cs/System-Administration-Projects/blob/main/03-Configuring-DNS-and-DHCP-in-Windows-Server/images/Figure17_add_new_ipv4_scope_continued.png)
+
+4. Configure the lease duration to last **7 days**, and click **Next**.
+5. Continue with the setup process until the section for **Domain Name and DNS Servers**. In this section, specify the parent domain as `cyber.local`. Assigned the IP address of the domain to `192.168.0.1`. Click the **Add** button, **Yes** to confirm, and **Next**. Bypassed WINS server configurations by keeping their fields empty.
+6. Opt to activate the scope immediately.
+7. Complete the process and exit the wizard. Finally, revisit the `DHCP` management tool to confirm your scope's successful creation and activation.
+
+![Figure 18 - Add and Activate a new IPv4 scope (Continued) 2](https://github.com/iagsalazar1-cs/System-Administration-Projects/blob/main/03-Configuring-DNS-and-DHCP-in-Windows-Server/images/Figure18_add_new_ipv4_scope_continued_2.png)
