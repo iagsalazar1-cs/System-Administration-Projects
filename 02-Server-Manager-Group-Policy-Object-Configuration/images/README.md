@@ -1,1 +1,1 @@
-
+The images folder for this project contains all the figures in the main `README.md` file of the "Server Manager Group Policy Object Configuration" project, which are screenshots that visually document each step of the `Group Policy Object (GPO)` configuration process on the Windows Server.
