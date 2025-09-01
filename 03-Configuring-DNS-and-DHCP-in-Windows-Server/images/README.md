@@ -1,1 +1,1 @@
-
+This images folder contains all the visual assets in the main `README.md` file for the "Configuring DNS and DHCP in Windows Server" project. Each file is a screenshot that corresponds directly to a step in the project, making it easy to follow along.
